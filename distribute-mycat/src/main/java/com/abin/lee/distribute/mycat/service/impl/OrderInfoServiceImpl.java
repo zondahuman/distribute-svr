@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Date;
 
 /**
  * Created by abin on 2017/4/27 17:48.
@@ -28,6 +29,9 @@ public class OrderInfoServiceImpl implements OrderInfoService {
         OrderInfo orderInfo = new OrderInfo();
         try {
             PropertyUtils.copyProperties(orderInfo, userVo);
+            orderInfo.setCreateTime(new Date());
+            orderInfo.setUpdateTime(new Date());
+            orderInfo.setVersion(0);
         } catch (Exception e) {
             e.printStackTrace();
         }
