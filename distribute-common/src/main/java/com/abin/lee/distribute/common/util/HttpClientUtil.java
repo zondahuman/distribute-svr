@@ -52,6 +52,18 @@ public class HttpClientUtil {
         httpsClient = getHttpsClient();
     }
 
+
+    private HttpClientUtil(){}
+
+    private static class HttpClientUtilHolder{
+        private static HttpClientUtil instance = new HttpClientUtil();
+    }
+
+    public static HttpClientUtil getInstance(){
+        return HttpClientUtilHolder.instance;
+    }
+
+
     public static CloseableHttpClient getHttpClient() {
         try {
             httpClient = HttpClients.custom()
