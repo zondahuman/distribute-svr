@@ -15,3 +15,27 @@ grant all PRIVILEGES on *.* to root@'%'  identified by 'root';
 
 
 
+Mycat 多租户方案
+http://blog.csdn.net/prestigeding/article/details/52662426?locationNum=11&fps=1
+https://github.com/dingwpmz/Mycat-Demo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
