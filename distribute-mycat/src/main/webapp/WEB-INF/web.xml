@@ -18,9 +18,7 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-            classpath*:applicationContext-dao.xml,
-            classpath*:applicationContext-web.xml,
-            classpath*:applicationContext-mvc.xml,
+            classpath*:spring-root.xml
         </param-value>
 	</context-param>
 

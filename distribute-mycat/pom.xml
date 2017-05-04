@@ -70,29 +70,30 @@
             <resource>
                 <directory>src/main/resources</directory>
                 <filtering>false</filtering>
-                <excludes>
-                    <exclude>filters/*.*</exclude>
-                    <exclude>properties/*.*</exclude>
-                    <exclude>logback.xml</exclude>
-                </excludes>
+                <!--<excludes>-->
+                    <!--<exclude>filters/*.*</exclude>-->
+                    <!--<exclude>properties/*.*</exclude>-->
+                    <!--<exclude>logback.xml</exclude>-->
+                <!--</excludes>-->
                 <includes>
                     <include>**/*.*</include>
                 </includes>
             </resource>
             <resource>
-                <directory>src/main/resources</directory>
+                <directory>src/main/profiles</directory>
                 <filtering>true</filtering>
-                <excludes>
-                    <exclude>filters/*.*</exclude>
-                </excludes>
+                <!--<excludes>-->
+                    <!--<exclude>filters/*.*</exclude>-->
+                <!--</excludes>-->
                 <includes>
-                    <include>properties/*.*</include>
+                    <include>**/*.*</include>
                     <include>logback.xml</include>
                 </includes>
             </resource>
         </resources>
         <!--<filters>-->
-            <!--<filter>src/main/resources/filters/config-common-${env}.properties</filter>-->
+            <!--<filter>src/main/resources/common.properties</filter>-->
+            <!--<filter>src/main/resources/jdbc.properties</filter>-->
         <!--</filters>-->
 
         <plugins>
