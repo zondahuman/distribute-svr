@@ -91,9 +91,9 @@
                 </includes>
             </resource>
         </resources>
-        <filters>
-            <filter>src/main/resources/filters/config-common-${env}.properties</filter>
-        </filters>
+        <!--<filters>-->
+            <!--<filter>src/main/resources/filters/config-common-${env}.properties</filter>-->
+        <!--</filters>-->
 
         <plugins>
 

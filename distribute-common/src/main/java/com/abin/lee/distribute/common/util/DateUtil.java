@@ -1,5 +1,6 @@
 package com.abin.lee.distribute.common.util;
 
+
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.apache.commons.lang3.time.FastDateFormat;
 
@@ -26,7 +27,7 @@ public class DateUtil {
     public static Date getYMDTime(String param) {
         Date result = null;
         try {
-            result = DateFormatUtils.ISO_DATE_FORMAT.parse(param);
+            result = DateFormatUtils.ISO_8601_EXTENDED_DATE_FORMAT.parse(param);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -46,7 +47,7 @@ public class DateUtil {
     public static Date getHMSTime(String param) {
         Date result = null;
         try {
-            result = DateFormatUtils.ISO_TIME_NO_T_FORMAT.parse(param);
+            result = DateFormatUtils.ISO_8601_EXTENDED_TIME_FORMAT.parse(param);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -127,6 +128,59 @@ public class DateUtil {
     }
 
 
+    public static String getYMDTime(long date) {
+        String result = "";
+        try {
+            result = DateFormatUtils.format(date, ymdSdf);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+
+
+    public static String getHMSTime(long date) {
+        String result = "";
+        try {
+            result = DateFormatUtils.format(date, ymdhmsSdf);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+
+    public static Long getYMDTimeStamp() {
+        Long result = null;
+        try {
+            result = DateFormatUtils.ISO_8601_EXTENDED_DATE_FORMAT.parse(getYMDTime(new Date())).getTime();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+
+    public static Long getYMDHMSTimeStamp() {
+        Long result = null;
+        try {
+            result = DateFormatUtils.ISO_8601_EXTENDED_DATE_FORMAT.parse(getYMDHMSTime(new Date())).getTime();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+
+    public static Date getYMDDate(Long timestamp) {
+        Date result = null;
+        try {
+            result = new Date(timestamp);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+
+
+
 
     public static void main(String[] args) {
         String result = getYMDHMSTime();
@@ -141,6 +195,14 @@ public class DateUtil {
         System.out.println("result4="+result4);
         String result5 = getYMDHMSTime(1487838953000L);
         System.out.println("result5="+result5);
+        Long result6 = getYMDTimeStamp();
+        System.out.println("result6="+result6);
+        Long result7 = getYMDHMSTimeStamp();
+        System.out.println("result7="+result7);
+
+        Date result8 = getYMDDate(System.currentTimeMillis());
+        System.out.println("result8="+result8);
+
 
     }
 
