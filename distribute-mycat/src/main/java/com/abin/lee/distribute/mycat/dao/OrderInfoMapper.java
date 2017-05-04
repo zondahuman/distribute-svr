@@ -1,10 +1,12 @@
 package com.abin.lee.distribute.mycat.dao;
 
+import com.abin.lee.distribute.mycat.annotation.MybatisScan;
 import com.abin.lee.distribute.mycat.model.OrderInfo;
 import com.abin.lee.distribute.mycat.model.OrderInfoExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
+@MybatisScan
 public interface OrderInfoMapper {
     int countByExample(OrderInfoExample example);
 
