@@ -24,7 +24,8 @@ https://github.com/dingwpmz/Mycat-Demo
 
 MyCat部署运行（Windows环境）与使用步骤详解
 http://blog.csdn.net/Stubborn_Cow/article/details/46967407
-
+MyCAT全局序列号
+http://www.linuxidc.com/Linux/2016-03/129179.htm
 
 
 
