@@ -41,7 +41,7 @@ public class OrderInfoController {
             LOGGER.info("response={}", response);
             response = "SUCCESS";
         } catch (Exception e) {
-            LOGGER.error("e={}", e);
+            LOGGER.error("userVo={}", JsonUtil.toJson(userVo), e);
             return BaseVo.error();
         }
         return BaseVo.success();

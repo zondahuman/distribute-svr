@@ -14,8 +14,8 @@ import java.util.Map;
  * com.abin.lee.circular.main.test
  */
 public class OrderInfoAddTest {
-//    private static String httpUrl = "http://localhost:8300/orderInfo/call";;
-    private static String httpUrl = "http://localhost:7100/orderInfo/call";
+    private static String httpUrl = "http://localhost:8300/orderInfo/call";;
+//    private static String httpUrl = "http://localhost:7100/orderInfo/call";
 
 
     @Test
