@@ -2,6 +2,7 @@ package com.abin.lee.distribute.mycat.test;
 
 import com.abin.lee.distribute.common.util.JsonUtil;
 import com.abin.lee.distribute.common.util.RestTemplateUtil;
+import com.abin.lee.distribute.mycat.vo.request.CompanyVo;
 import com.abin.lee.distribute.mycat.vo.request.UserVo;
 import com.google.common.collect.Maps;
 import org.junit.Test;
@@ -13,18 +14,17 @@ import java.util.Map;
  * circular-reference
  * com.abin.lee.circular.main.test
  */
-public class OrderInfoAddTest {
-//    private static String httpUrl = "http://localhost:8300/orderInfo/call";;
-    private static String httpUrl = "http://localhost:7100/orderInfo/call";
+public class CompanyAddTest {
+//    private static String httpUrl = "http://localhost:8300/company/call";;
+    private static String httpUrl = "http://localhost:7100/company/call";
 
 
     @Test
     public void testOrderInfoAdd1(){
-        UserVo userVo = new UserVo();
-        userVo.setName("abin");
-        userVo.setAge(55);
-        userVo.setId(1);
-        String json = JsonUtil.toJson(userVo);
+        CompanyVo companyVo = new CompanyVo();
+        companyVo.setName("abin");
+        companyVo.setShardingId(55);
+        String json = JsonUtil.toJson(companyVo);
         Map<String, String> headers = Maps.newHashMap();
         headers.put("STATUS_INPUT", "what");
         String result = RestTemplateUtil.getInstance().httpPost(httpUrl,json, headers);
@@ -33,11 +33,10 @@ public class OrderInfoAddTest {
 
     @Test
     public void testOrderInfoAdd2(){
-        UserVo userVo = new UserVo();
-        userVo.setName("abin");
-        userVo.setAge(55);
-        userVo.setId(1);
-        String json = JsonUtil.toJson(userVo);
+        CompanyVo companyVo = new CompanyVo();
+        companyVo.setName("abin");
+        companyVo.setShardingId(55);
+        String json = JsonUtil.toJson(companyVo);
         String result = RestTemplateUtil.getInstance().httpPost(httpUrl,json);
         System.out.println("result="+result);
     }

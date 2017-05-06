@@ -100,13 +100,13 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.abin.lee.distribute.mycat.model.OrderInfo" >
-    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into order_info (name, age, create_time, 
+  <insert id="insert" parameterType="com.abin.lee.distribute.mycat.model.OrderInfo" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+    <!--<selectKey resultType="java.lang.Integer" keyProperty="id" order="BEFORE" >-->
+      <!--SELECT next value for MYCATSEQ_GLOBAL-->
+    <!--</selectKey>-->
+    insert into order_info (id, name, age, create_time,
       update_time, version)
-    values (#{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+    values (next value for MYCATSEQ_GLOBAL, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP},
       #{updateTime,jdbcType=TIMESTAMP}, #{version,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.abin.lee.distribute.mycat.model.OrderInfo" >
