@@ -1,3 +1,4 @@
+create schema distribute1;
 
 create table order_info(
 id int  not null,
