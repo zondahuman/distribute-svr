@@ -13,6 +13,23 @@ constraint pk_order_info primary key(id)
 create table company(id int not null primary key,name varchar(100),sharding_id int not null);
 create table travelrecord(id int not null primary key,name varchar(100));
 
+create table team(
+id int primary key ,
+team_name varchar(100),
+create_time datetime,
+update_time datetime,
+version int
+)
+
+create table order_change(
+id int primary key ,
+order_name varchar(100),
+team_id int,
+create_time datetime,
+update_time datetime,
+version int
+)
+
 
 
 创建用户

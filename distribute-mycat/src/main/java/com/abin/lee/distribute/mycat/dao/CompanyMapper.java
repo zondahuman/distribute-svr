@@ -6,7 +6,7 @@ import com.abin.lee.distribute.mycat.model.CompanyExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-@MybatisScan
+//@MybatisScan
 public interface CompanyMapper {
     int countByExample(CompanyExample example);
 

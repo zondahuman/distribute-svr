@@ -6,7 +6,7 @@ import com.abin.lee.distribute.mycat.model.OrderInfoExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-@MybatisScan
+//@MybatisScan
 public interface OrderInfoMapper {
     int countByExample(OrderInfoExample example);
 
