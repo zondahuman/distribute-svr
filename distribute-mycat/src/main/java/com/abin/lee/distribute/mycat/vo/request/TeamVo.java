@@ -13,6 +13,6 @@ import lombok.Setter;
 @Setter
 public class TeamVo {
 
-    private String TeamName;
+    private String teamName;
 
 }

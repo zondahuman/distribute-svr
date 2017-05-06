@@ -35,7 +35,7 @@ public class OrderChangeAddTest {
     public void testOrderChangeAdd2(){
         OrderChangeVo orderChangeVo = new OrderChangeVo();
         orderChangeVo.setOrderName("abin");
-        orderChangeVo.setTeamId(55);
+        orderChangeVo.setTeamId(10035);
         String json = JsonUtil.toJson(orderChangeVo);
         String result = RestTemplateUtil.getInstance().httpPost(httpUrl,json);
         System.out.println("result="+result);

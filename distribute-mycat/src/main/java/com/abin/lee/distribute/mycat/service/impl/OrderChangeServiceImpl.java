@@ -12,6 +12,7 @@ import org.apache.commons.beanutils.PropertyUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 
 /**
  * Created by abin on 2017/4/27 17:48.
@@ -31,6 +32,9 @@ public class OrderChangeServiceImpl implements OrderChangeService {
         OrderChange orderChange = new OrderChange();
         try {
             PropertyUtils.copyProperties(orderChange, orderChangeVo);
+            orderChange.setCreateTime(new Date());
+            orderChange.setUpdateTime(new Date());
+            orderChange.setVersion(0);
         } catch (Exception e) {
             e.printStackTrace();
         }

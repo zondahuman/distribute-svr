@@ -17,14 +17,9 @@
 			rule="mod-long" /> -->
 		<table name="employee" primaryKey="ID" dataNode="dn1,dn2"
 			   rule="sharding-by-intfile" />
-		<table name="customer" primaryKey="ID" dataNode="dn1,dn2"
+		<table name="team" primaryKey="ID" dataNode="dn1,dn2,dn3"
 			   rule="sharding-by-intfile">
-			<childTable name="orders" primaryKey="ID" joinKey="customer_id"
-						parentKey="id">
-				<childTable name="order_items" joinKey="order_id"
-							parentKey="id" />
-			</childTable>
-			<childTable name="customer_addr" primaryKey="ID" joinKey="customer_id"
+			<childTable name="order_change" primaryKey="ID" joinKey="team_id"
 						parentKey="id" />
 		</table>
 		<!-- <table name="oc_call" primaryKey="ID" dataNode="dn1$0-743" rule="latest-month-calldate"

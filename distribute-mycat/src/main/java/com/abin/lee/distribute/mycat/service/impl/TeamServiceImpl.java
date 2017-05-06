@@ -9,6 +9,7 @@ import org.apache.commons.beanutils.PropertyUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 
 /**
  * Created by abin on 2017/4/27 17:48.
@@ -28,6 +29,9 @@ public class TeamServiceImpl implements TeamService {
         Team team = new Team();
         try {
             PropertyUtils.copyProperties(team, teamVo);
+            team.setCreateTime(new Date());
+            team.setUpdateTime(new Date());
+            team.setVersion(0);
         } catch (Exception e) {
             e.printStackTrace();
         }
