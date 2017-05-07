@@ -68,7 +68,13 @@ insert into travelrecord(id,name) values(next value for MYCATSEQ_GLOBAL,'hp');
 
 JOIN连表
 select * from company com left join travelrecord tre on com.`name`=tre.`name` where com.`name`='hp' ;
+select * from team tea left join order_change orc on tea.`id`=orc.`team_id`  ;
 
+select * from company ;
+select * from order_info ;
+select * from travelrecord ;
+select * from team ;
+select * from order_change ;
 
 
 sudo kill -9 `ps -ef | grep mycat | awk '{print $2}'`
