@@ -22,8 +22,8 @@ public class OrderChangeAddTest {
     @Test
     public void testOrderChangeAdd1(){
         OrderChangeVo orderChangeVo = new OrderChangeVo();
-        orderChangeVo.setOrderName("abin2");
-        orderChangeVo.setTeamId(10037);
+        orderChangeVo.setOrderName("abin3");
+        orderChangeVo.setTeamId(10045);
         String json = JsonUtil.toJson(orderChangeVo);
         Map<String, String> headers = Maps.newHashMap();
         headers.put("STATUS_INPUT", "what");
@@ -35,7 +35,7 @@ public class OrderChangeAddTest {
     public void testOrderChangeAdd2(){
         OrderChangeVo orderChangeVo = new OrderChangeVo();
         orderChangeVo.setOrderName("abin");
-        orderChangeVo.setTeamId(10035);
+        orderChangeVo.setTeamId(10045);
         String json = JsonUtil.toJson(orderChangeVo);
         String result = RestTemplateUtil.getInstance().httpPost(httpUrl,json);
         System.out.println("result="+result);

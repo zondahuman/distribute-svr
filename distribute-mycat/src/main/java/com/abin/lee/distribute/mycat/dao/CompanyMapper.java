@@ -1,12 +1,11 @@
 package com.abin.lee.distribute.mycat.dao;
 
-import com.abin.lee.distribute.mycat.annotation.MybatisScan;
 import com.abin.lee.distribute.mycat.model.Company;
 import com.abin.lee.distribute.mycat.model.CompanyExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-//@MybatisScan
+import java.util.List;
+
 public interface CompanyMapper {
     int countByExample(CompanyExample example);
 
