@@ -22,7 +22,7 @@ public class TeamAddTest {
     @Test
     public void testTeamAdd1(){
         TeamVo teamVo = new TeamVo();
-        teamVo.setTeamName("abin3");
+        teamVo.setTeamName("abin4");
         String json = JsonUtil.toJson(teamVo);
         Map<String, String> headers = Maps.newHashMap();
         headers.put("STATUS_INPUT", "what");

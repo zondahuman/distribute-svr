@@ -105,7 +105,7 @@
     <!--</selectKey>-->
     insert into team (id, team_name, create_time, update_time,
       version)
-    values (next value for MYCATSEQ_GLOBAL, #{teamName,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP},
+    values (next value for MYCATSEQ_MYCAT, #{teamName,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP},
       #{version,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.abin.lee.distribute.mycat.model.Team" >

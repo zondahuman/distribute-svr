@@ -22,8 +22,8 @@ public class OrderChangeAddTest {
     @Test
     public void testOrderChangeAdd1(){
         OrderChangeVo orderChangeVo = new OrderChangeVo();
-        orderChangeVo.setOrderName("abin3");
-        orderChangeVo.setTeamId(10045);
+        orderChangeVo.setOrderName("abin4");
+        orderChangeVo.setTeamId(100011);
         String json = JsonUtil.toJson(orderChangeVo);
         Map<String, String> headers = Maps.newHashMap();
         headers.put("STATUS_INPUT", "what");
