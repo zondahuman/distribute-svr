@@ -96,4 +96,3 @@ Mybatis Support:
       )
   </insert>
 
-  
