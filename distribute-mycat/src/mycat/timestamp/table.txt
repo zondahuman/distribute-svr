@@ -84,3 +84,16 @@ sudo kill -9 `ps -ef | grep mycat | awk '{print $2}'`
 
 
 
+Mybatis Support:
+
+ <insert id="insert" parameterType="com.abin.lee.distribute.mycat.model.BusiTimestamp"   useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+    <!--<selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >-->
+      <!--SELECT LAST_INSERT_ID()-->
+    <!--</selectKey>-->
+    insert into busi_timestamp (id, name, age, version
+      )
+    values (next value for MYCATSEQ_GLOBAL, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{version,jdbcType=INTEGER}
+      )
+  </insert>
+
+  
