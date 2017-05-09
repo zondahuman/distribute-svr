@@ -30,6 +30,7 @@ update_time datetime,
 version int
 )
 
+create table busi_timestamp(id bigint primary key, name varchar(100), age int, version int);
 
 
 创建用户
@@ -65,6 +66,7 @@ create table travelrecord(id int not null primary key,name varchar(100));
 insert into travelrecord(id,name) values(next value for MYCATSEQ_GLOBAL,'leader us');
 insert into travelrecord(id,name) values(next value for MYCATSEQ_GLOBAL,'hp');
 
+insert into busi_timestamp(id,name,age,version) values (next value for MYCATSEQ_GLOBAL,'lee1',12,0);
 
 JOIN连表
 select * from company com left join travelrecord tre on com.`name`=tre.`name` where com.`name`='hp' ;
@@ -78,11 +80,6 @@ select * from order_change ;
 
 
 sudo kill -9 `ps -ef | grep mycat | awk '{print $2}'`
-
-
-
-mybatis配置：
-
 
 
 
