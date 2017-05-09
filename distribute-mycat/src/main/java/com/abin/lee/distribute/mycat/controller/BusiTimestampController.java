@@ -35,13 +35,10 @@ public class BusiTimestampController {
     @ResponseBody
     public BaseVo call(@RequestBody BusiTimestampVo busiTimestampVo, HttpServletRequest request) {
         LOGGER.info("busiTimestampVo={}", JsonUtil.toJson(busiTimestampVo));
-        String response = "FAILURE";
         String headers = request.getHeader("STATUS_INPUT");
         LOGGER.info("busiTimestampVo={} headers={}", JsonUtil.toJson(busiTimestampVo), headers);
         try {
             this.busiTimestampService.insert(busiTimestampVo);
-            LOGGER.info("response={}", response);
-            response = "SUCCESS";
         } catch (Exception e) {
             LOGGER.error("busiTimestampVo={}", JsonUtil.toJson(busiTimestampVo), e);
             return BaseVo.error();

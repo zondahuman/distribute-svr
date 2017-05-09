@@ -1,16 +1,16 @@
 package com.abin.lee.distribute.mycat.service.impl;
 
+import com.abin.lee.distribute.common.util.JsonUtil;
 import com.abin.lee.distribute.mycat.dao.BusiTimestampMapper;
-import com.abin.lee.distribute.mycat.dao.OrderInfoMapper;
 import com.abin.lee.distribute.mycat.model.BusiTimestamp;
-import com.abin.lee.distribute.mycat.model.OrderInfo;
 import com.abin.lee.distribute.mycat.service.BusiTimestampService;
 import com.abin.lee.distribute.mycat.vo.request.BusiTimestampVo;
 import org.apache.commons.beanutils.PropertyUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.Date;
 
 /**
  * Created by abin on 2017/5/9 15:41.
@@ -19,6 +19,7 @@ import java.util.Date;
  */
 @Service
 public class BusiTimestampServiceImpl implements BusiTimestampService {
+    private Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
     @Resource
     BusiTimestampMapper busiTimestampMapper;
@@ -35,5 +36,6 @@ public class BusiTimestampServiceImpl implements BusiTimestampService {
             e.printStackTrace();
         }
         this.busiTimestampMapper.insert(busiTimestamp);
+        LOGGER.info("busiTimestamp={}", JsonUtil.toJson(busiTimestamp));
     }
 }

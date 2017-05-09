@@ -67,7 +67,8 @@ insert into travelrecord(id,name) values(next value for MYCATSEQ_GLOBAL,'leader 
 insert into travelrecord(id,name) values(next value for MYCATSEQ_GLOBAL,'hp');
 
 insert into busi_timestamp(id,name,age,version) values (next value for MYCATSEQ_GLOBAL,'lee1',12,0);
-
+select last_insert_id();
+explain select last_insert_id();
 JOIN连表
 select * from company com left join travelrecord tre on com.`name`=tre.`name` where com.`name`='hp' ;
 select * from team tea left join order_change orc on tea.`id`=orc.`team_id`  ;

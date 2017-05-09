@@ -22,7 +22,7 @@ public class BusiTimestampAddTest {
     @Test
     public void testBusiTimestampAdd1(){
         BusiTimestampVo busiTimestampVo = new BusiTimestampVo();
-        busiTimestampVo.setName("abin5");
+        busiTimestampVo.setName("abin6");
         busiTimestampVo.setAge(35);
         String json = JsonUtil.toJson(busiTimestampVo);
         Map<String, String> headers = Maps.newHashMap();
@@ -34,7 +34,7 @@ public class BusiTimestampAddTest {
     @Test
     public void testBusiTimestampAdd2(){
         BusiTimestampVo busiTimestampVo = new BusiTimestampVo();
-        busiTimestampVo.setName("abin5");
+        busiTimestampVo.setName("abin6");
         busiTimestampVo.setAge(35);
         String json = JsonUtil.toJson(busiTimestampVo);
         String result = RestTemplateUtil.getInstance().httpPost(httpUrl,json);
