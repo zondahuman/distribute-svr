@@ -10,5 +10,7 @@ public class IntegerTest {
     public static void main(String[] args) {
         String result = Integer.toString(10);
         System.out.println(result);
+        System.out.println("1111");
+
     }
 }
