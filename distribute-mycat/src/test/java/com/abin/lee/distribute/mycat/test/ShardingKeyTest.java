@@ -126,13 +126,16 @@ public class ShardingKeyTest {
         }
         System.out.println("--------------------------------------------------------");
 
-
+        List<Integer> list2 = Lists.newArrayList();
+        for (int i = 0; i <8 ; i++) {
+            list2.add(i);
+        }
         int baseDbEight = 8;
-        for (int temp : list1) {
+        for (int temp : list2) {
             Integer baseDbEightResult = temp % baseDbEight;
 //            System.out.println("baseDbEight-----temp=" + temp + " ,baseDbEightResult="+baseDbEightResult);
             int baseTableTwo = 2;
-            Integer baseDbEightTableTwoResult = (temp / baseDbEightResult) & (baseTableTwo - 1);
+            Integer baseDbEightTableTwoResult = (temp / baseDbEight) & (baseTableTwo - 1);
             System.out.println("baseDbEightResult-----temp==" + temp + " ,baseDbEightResult="+baseDbEightResult + " ,baseDbEightTableTwoResult="+baseDbEightTableTwoResult);
         }
         System.out.println("--------------------------------------------------------");
